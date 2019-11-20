@@ -33,5 +33,6 @@ RSpec.describe "shelters index page", type: :feature do
     click_button
 
     expect(current_path).to eq('/shelters')
+    expect(page).to have_content('The Aviary')
   end
 end
