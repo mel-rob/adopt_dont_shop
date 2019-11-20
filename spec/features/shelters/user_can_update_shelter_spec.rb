@@ -29,5 +29,7 @@ RSpec.describe "shelters show page", type: :feature do
     click_button
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
+    
+    expect(page).to have_content("Rattler Room")
   end
 end
