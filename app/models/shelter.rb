@@ -7,4 +7,8 @@ class Shelter < ApplicationRecord
                         :state,
                         :zip
 
+  def adoptable_pets
+    pets.where(status: 'adoptable')
+  end
+
 end
