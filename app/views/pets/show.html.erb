@@ -6,6 +6,7 @@
 <h3>Status: <%= @pet.status %></h3>
 
 <form action='/pets/<%= @pet.id %>' method='POST'>
+  <a href="/pets/<%= @pet.id %>/edit" class='btn btn-info' role='button'>Update</a>
   <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
   <input type='hidden' name='_method' value='DELETE'>
   <input type="submit" class="btn btn-info" value="Delete"/>
