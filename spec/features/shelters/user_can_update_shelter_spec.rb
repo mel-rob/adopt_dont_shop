@@ -18,7 +18,7 @@ RSpec.describe "shelters show page", type: :feature do
 
     expect(page).to have_link('Update')
 
-    click_link
+    click_link 'Update'
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
 
@@ -26,10 +26,10 @@ RSpec.describe "shelters show page", type: :feature do
 
     fill_in 'name', :with => 'Rattler Room'
 
-    click_button
+    click_button 'Submit'
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
-    
+
     expect(page).to have_content("Rattler Room")
   end
 end
