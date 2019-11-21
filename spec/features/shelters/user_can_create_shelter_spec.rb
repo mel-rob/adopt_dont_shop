@@ -19,7 +19,7 @@ RSpec.describe "shelters index page", type: :feature do
     fill_in 'state', :with => 'CO'
     fill_in 'zip', :with => '80215'
 
-    click_button
+    click_button 'Submit'
 
     expect(current_path).to eq('/shelters')
     expect(page).to have_content('The Aviary')
