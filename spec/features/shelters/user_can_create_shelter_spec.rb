@@ -8,7 +8,7 @@ RSpec.describe "shelters index page", type: :feature do
     expect(page).to have_link('Create New')
     expect(page).not_to have_content('The Aviary')
 
-    click_link
+    click_link 'Create New'
 
     expect(current_path).to eq('/shelters/new')
     expect(page).to have_button('Submit')

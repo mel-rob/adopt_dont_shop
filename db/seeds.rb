@@ -39,3 +39,22 @@ Pet.destroy_all
                     sex:        "female",
                     status:     "adoptable",
                     shelter_id: @shelter_2.id)
+@pet_4 = Pet.create(image: "http://reptile.guide/wp-content/uploads/2019/02/Bearded-dragon-poop-.jpg",
+                    name:  'Chive',
+                    desc:  "I'm a bearded dragon. I like to hunt and be active during the daytime.",
+                    age: '5',
+                    sex: 'male',
+                    status: "pending_adoption",
+                    shetler_id: @shelter_1.id)
+@pet_5 = Pet.create(image: "https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Lovebird-300x300.jpg",
+                    name: 'Charlene',
+                    age: '3',
+                    sex: 'female'
+                    status: "adoptable",
+                    shelter_id: @shelter_3.id)
+@pet_6 = Pet.create(image: "https://d17fnq9dkz9hgj.cloudfront.net/uploads/2012/11/153546296-items-dangerous-pet-birds.jpg",
+                    name: 'Zoe',
+                    age: '8',
+                    sex: 'female'
+                    status: "pending_adoption",
+                    shelter_id: @shelter_3.id)
