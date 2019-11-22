@@ -15,6 +15,11 @@
       <h3>Age (approx): <%= pet.age %></h3>
       <h3>Sex: <%= pet.sex %></h3>
       <h3>Shelter: <%= pet.shelter.name %></h3>
-      <a href="/pets/<%= pet.id %>/edit" class='btn btn-info' role='button'>Edit</a><br>
+      <form action='/pets/<%= pet.id %>' method='POST'>
+        <a href="/pets/<%= pet.id %>/edit" class='btn btn-info' role='button'>Edit</a>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <input type='hidden' name='_method' value='DELETE'>
+        <input type="submit" class="btn btn-info" value="Delete"/>
+      </form>
     <% end %>
 <% end %>
