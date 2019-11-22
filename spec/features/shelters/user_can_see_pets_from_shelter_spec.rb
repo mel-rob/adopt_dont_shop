@@ -65,7 +65,6 @@ RSpec.describe "shelter pets index page", type: :feature do
     expect(page).not_to have_content(pet_4.name)
 
     visit "/shelters/#{shelter_2.id}/pets"
-    expect(page.find("#img-#{pet_4.id}")['src']).to have_content "#{pet_4.image}"
     expect(page).to have_content(pet_4.name)
     expect(page).to have_content(pet_4.age)
     expect(page).to have_content(pet_4.sex)
