@@ -10,10 +10,11 @@
   <a href="/shelters/<%= params[:id] %>/pets/new" class='btn btn-info' role='button'>New Pet</a>
 <% else %>
   <% @pets.each do |pet| %>
-      <img src=<%= pet.image %> class="img-thumbnail" id="img-<%= pet.id %>"></img>
+      <br><img src=<%= pet.image %> class="img-thumbnail" id="img-<%= pet.id %>"></img>
       <h3>Name: <%= pet.name %></h3>
       <h3>Age (approx): <%= pet.age %></h3>
       <h3>Sex: <%= pet.sex %></h3>
       <h3>Shelter: <%= pet.shelter.name %></h3>
+      <a href="/pets/<%= pet.id %>/edit" class='btn btn-info' role='button'>Edit</a><br>
     <% end %>
 <% end %>
