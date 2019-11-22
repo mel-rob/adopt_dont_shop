@@ -58,3 +58,15 @@ Pet.destroy_all
                     sex: 'female'
                     status: "pending_adoption",
                     shelter_id: @shelter_3.id)
+@pet_7 = Pet.create(image: "https://storage.makerist.de/uploads/orderable_image/226835/image/carousel_large_image_a0dd000d.jpg",
+                    name: 'Fancy',
+                    age: '5',
+                    sex: 'female',
+                    status: 'adoptable',
+                    shelter_id: @shelter_2.id)
+@pet_8 = Pet.create(image: "https://m.liveaquaria.com/images/categories/large/lg80188OcellarisClownfish.jpg",
+                    name: 'Pumpkin',
+                    age: '3',
+                    sex: 'male',
+                    status: 'pending_adoption',
+                    shelter_id: @shelter_2.id)
