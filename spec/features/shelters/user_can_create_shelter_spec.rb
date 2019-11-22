@@ -13,11 +13,11 @@ RSpec.describe "shelters index page", type: :feature do
     expect(current_path).to eq('/shelters/new')
     expect(page).to have_button('Submit')
 
-    fill_in 'name', :with => 'The Aviary'
-    fill_in 'address', :with => '27 Skylark Drive'
-    fill_in 'city', :with => 'Denver'
-    fill_in 'state', :with => 'CO'
-    fill_in 'zip', :with => '80215'
+    fill_in 'name', with: 'The Aviary'
+    fill_in 'address', with: '27 Skylark Drive'
+    fill_in 'city', with: 'Denver'
+    fill_in 'state', with: 'CO'
+    fill_in 'zip', with: '80215'
 
     click_button 'Submit'
 
