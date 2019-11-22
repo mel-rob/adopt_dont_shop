@@ -1,7 +1,13 @@
 <h1>Shelters</h1>
 
 <% @shelters.each do |shelter| %>
-  <h3><%= shelter.name %><a href='shelters/<%= shelter.id %>/edit' class='btn btn-info' role='button'>Edit</a></h3>
+<form class='col-sm' action='/shelters/<%= shelter.id %>' method='POST'>
+  <h3><%= shelter.name %>
+  <a href="/shelters/<%= shelter.id %>/edit" class='btn btn-outline-info btn-sm' role='button'>Edit</a>
+  <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <input type="submit" class="btn btn-outline-info btn-sm" value="Delete"/>
+</form></h3>
 <% end %>
 
 <a href='shelters/new' class='btn btn-info' role='button'>Create New</a>

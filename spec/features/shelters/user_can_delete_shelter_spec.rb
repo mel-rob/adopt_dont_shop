@@ -14,22 +14,29 @@ RSpec.describe "shelters show page", type: :feature do
                                state:   "CO",
                                zip:     "80232")
 
+    visit '/shelters'
+    expect(page).to have_content(shelter_1.name)
+
     visit "/shelters/#{shelter_1.id}"
-
     expect(page).to have_button('Delete')
 
     click_button 'Delete'
 
     expect(current_path).to eq('/shelters')
-    expect(page).not_to have_content(shelter_1.name)
+    expect(page).to_not have_content(shelter_1.name)
 
-    visit "/shelters/#{shelter_2.id}"
-    expect(page).to have_button('Delete')
 
-    click_button 'Delete'
 
-    expect(current_path).to eq('/shelters')
-    expect(page).not_to have_content(shelter_2.name)
+    # visit '/shelters'
+    # expect(page).to have_content(shelter_2.name)
+    #
+    # visit "/shelters/#{shelter_2.id}"
+    # expect(page).to have_button('Delete')
+    #
+    # click_button 'Delete'
+    #
+    # expect(current_path).to eq('/shelters')
+    # expect(page).to_not have_content(shelter_2.name)
 
   end
 end

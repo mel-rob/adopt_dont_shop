@@ -24,7 +24,7 @@ RSpec.describe "shelters show page", type: :feature do
 
     expect(page).to have_button('Submit')
 
-    fill_in 'name', :with => 'Rattler Room'
+    fill_in 'name', with: 'Rattler Room'
 
     click_button 'Submit'
 

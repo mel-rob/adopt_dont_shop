@@ -11,12 +11,7 @@ RSpec.describe "shelter index page", type: :feature do
     visit '/shelters'
 
     expect(page).to have_content("Reptile Room")
+    expect(page).to have_button('Delete')
     expect(page).to have_link('Create New')
-    expect(page).to have_link('Edit')
-
-    # click_link 'Edit'
-
-    # expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
-
   end
 end
