@@ -45,16 +45,32 @@ Pet.destroy_all
                     age: '5',
                     sex: 'male',
                     status: "pending_adoption",
-                    shetler_id: @shelter_1.id)
+                    shelter_id: @shelter_1.id)
 @pet_5 = Pet.create(image: "https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Lovebird-300x300.jpg",
                     name: 'Charlene',
+                    desc: "I'm a lonely lovebird looking for a new home.",
                     age: '3',
-                    sex: 'female'
+                    sex: 'female',
                     status: "adoptable",
                     shelter_id: @shelter_3.id)
 @pet_6 = Pet.create(image: "https://d17fnq9dkz9hgj.cloudfront.net/uploads/2012/11/153546296-items-dangerous-pet-birds.jpg",
                     name: 'Zoe',
+                    desc: "I'm smart and sassy. Watch out.",
                     age: '8',
-                    sex: 'female'
+                    sex: 'female',
                     status: "pending_adoption",
                     shelter_id: @shelter_3.id)
+@pet_7 = Pet.create(image: "https://storage.makerist.de/uploads/orderable_image/226835/image/carousel_large_image_a0dd000d.jpg",
+                    name: 'Fancy',
+                    desc: "I'm a starfish looking for a saltwater home.",
+                    age: '5',
+                    sex: 'female',
+                    status: 'adoptable',
+                    shelter_id: @shelter_2.id)
+@pet_8 = Pet.create(image: "https://m.liveaquaria.com/images/categories/large/lg80188OcellarisClownfish.jpg",
+                    name: 'Pumpkin',
+                    desc: "No, I was not in 'Finding Nemo' and yes, I am the same type of fish.",
+                    age: '3',
+                    sex: 'male',
+                    status: 'pending_adoption',
+                    shelter_id: @shelter_2.id)

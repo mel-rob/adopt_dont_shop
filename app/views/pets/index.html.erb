@@ -14,7 +14,7 @@
       <h3>Name: <%= pet.name %></h3>
       <h3>Age (approx): <%= pet.age %></h3>
       <h3>Sex: <%= pet.sex %></h3>
-      <h3>Shelter: <%= pet.shelter.name %></h3>
+      <h3>Shelter: <a class='shelter-link' href='shelters/<%= pet.shelter_id %>'><%= pet.shelter.name %></a></h3>
       <form action='/pets/<%= pet.id %>' method='POST'>
         <a href="/pets/<%= pet.id %>/edit" class='btn btn-info' role='button'>Edit</a>
         <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
