@@ -4,8 +4,13 @@ img {
    height: 100px;
    width: 500px;
    max-height: 300px;
+   margin: 15px 0px 15px 0px;
   }
-  
+
   .shelter-link {
     color: black;
+  }
+
+  nav {
+    margin-bottom: 10px;
   }
