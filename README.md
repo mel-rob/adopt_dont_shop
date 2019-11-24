@@ -372,7 +372,7 @@ Then that link takes me to that Pet's show page
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 19, Pet Index Link
 
