@@ -26,16 +26,12 @@ RSpec.describe "shelters index page", type: :feature do
 
     visit '/shelters'
 
-    within "##{shelter_1.id}-section" do
+    within "##{@shelter_1.id}-section" do
       click_link 'Delete'
     end
 
     expect(current_path).to eq('/shelters')
     expect(page).to_not have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
-
-    expect(page).to have_content("Reptile Room")
-    expect(page).to have_button('Delete')
-    expect(page).to have_link('Create New')
   end
 end
