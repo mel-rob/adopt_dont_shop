@@ -427,7 +427,7 @@ I see a count of the number of pets at this shelter
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 24, Adoptable Pets Display First
 
