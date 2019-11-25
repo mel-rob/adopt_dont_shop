@@ -11,4 +11,8 @@ class Shelter < ApplicationRecord
     pets.where(status: 'adoptable')
   end
 
+  def pet_count
+    pets.count
+  end
+
 end

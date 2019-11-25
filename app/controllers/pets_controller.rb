@@ -1,11 +1,7 @@
 class PetsController < ApplicationController
 
   def index
-    if(params[:id])
-      @pets = Shelter.find(params[:id]).adoptable_pets
-    else
-      @pets = Pet.all
-    end
+    @pets = Pet.all
   end
 
   def new
