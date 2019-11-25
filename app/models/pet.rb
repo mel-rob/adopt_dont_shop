@@ -8,4 +8,7 @@ class Pet < ApplicationRecord
                         :sex,
                         :status
 
+  def self.pet_order
+    order(:status)
+  end
 end
