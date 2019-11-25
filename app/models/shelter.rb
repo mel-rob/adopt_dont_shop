@@ -15,4 +15,8 @@ class Shelter < ApplicationRecord
     pets.count
   end
 
+  def pet_order
+    pets.order(:status)
+  end
+
 end
