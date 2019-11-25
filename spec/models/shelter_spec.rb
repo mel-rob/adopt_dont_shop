@@ -55,4 +55,11 @@ RSpec.describe Shelter, type: :model do
 
     expect(@shelter_1.pet_count).to eq(3)
   end
+
+  it "can see adoptable pets first before pending_adoption pets" do
+
+    expect(@shelter_1.pet_order).to match_array [@pet_1, @pet_2, @pet_3]
+  end
+
+
 end
