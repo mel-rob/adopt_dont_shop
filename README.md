@@ -392,7 +392,7 @@ Then I see a link at the top of the page that takes me to the Shelter Index
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 21, Shelter Pet Index Link
 
@@ -402,7 +402,7 @@ Then I see a link to take me to that shelter's pets page ('/shelters/:id/pets')
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 22, Styling
 
