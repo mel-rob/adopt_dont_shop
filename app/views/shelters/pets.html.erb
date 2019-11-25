@@ -1,8 +1,8 @@
 
-<h3>Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}", class: 'shelter-link' %>: <%= @shelter.pet_count%></h3>
+<h3>All Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}", class: 'shelter-link' %>: <%= @shelter.pet_count%></h3>
 
 
-  <% @shelter.adoptable_pets.each do |pet| %>
+  <% @shelter.pet_order.each do |pet| %>
     <section id="<%= pet.id %>-section">
     <img src=<%= pet.image %> class="img-thumbnail" id="img-<%= pet.id %>"></img>
     <h3>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'shelter-link' %></h3>
