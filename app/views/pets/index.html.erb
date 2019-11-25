@@ -1,6 +1,6 @@
 <h1>Pets</h1>
 
-<% @pets.each do |pet| %>
+<% @pets.pet_order.each do |pet| %>
   <section id="<%= pet.id %>-section">
   <br><img src=<%= pet.image %> class="img-thumbnail" id="img-<%= pet.id %>"></img>
   <h3>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'shelter-link' %></h3>
