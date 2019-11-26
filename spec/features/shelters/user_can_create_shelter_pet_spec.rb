@@ -21,13 +21,13 @@ RSpec.describe "shelter pets index", type: :feature do
     fill_in 'name', :with => 'Chive'
     fill_in 'desc', :with => "I'm a bearded dragon. I like to hunt and be active during the daytime."
     fill_in 'age', :with => '5'
-    fill_in 'sex', :with => 'male'
+    select 'male', from: :sex
 
     click_button 'Submit'
-    
+
     expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
 
-    expect(page).to have_content('Name: Chive')
+    expect(page).to have_content('Chive')
     expect(page).to have_content('Age (approx): 5')
     expect(page).to have_content('Sex: male')
   end
