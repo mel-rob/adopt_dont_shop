@@ -18,5 +18,4 @@ class Shelter < ApplicationRecord
   def pet_order
     pets.order(:status)
   end
-
 end
