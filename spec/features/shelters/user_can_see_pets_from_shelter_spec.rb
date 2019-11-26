@@ -58,17 +58,11 @@ RSpec.describe "shelter pets index page", type: :feature do
     expect(page).to have_content(pet_2.age)
     expect(page).to have_content(pet_2.sex)
 
-    expect(page).not_to have_content(pet_1.shelter.name)
-    expect(page).not_to have_content(pet_2.shelter.name)
-
-    expect(page).not_to have_content(pet_3.name)
     expect(page).not_to have_content(pet_4.name)
 
     visit "/shelters/#{shelter_2.id}/pets"
     expect(page).to have_content(pet_4.name)
     expect(page).to have_content(pet_4.age)
     expect(page).to have_content(pet_4.sex)
-
-    expect(page).not_to have_content(pet_4.shelter.name)
   end
 end
