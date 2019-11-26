@@ -1,13 +1,13 @@
 <h1>Pets</h1>
 
 <% @pets.pet_order.each do |pet| %>
-  <section id="<%= pet.id %>-section">
-  <br><img src=<%= pet.image %> class="img-thumbnail" id="img-<%= pet.id %>"></img>
-  <h3>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'shelter-link' %></h3>
-  <h3>Age (approx): <%= pet.age %></h3>
-  <h3>Sex: <%= pet.sex %></h3>
-  <h3>Shelter: <%= link_to "#{pet.shelter.name}", "shelters/#{pet.shelter_id}", class: 'shelter-link' %></h3>
+  <section id="<%= pet.id %>-section" class='pet'>
+  <img src=<%= pet.image %> class="img-thumbnail" id="img-<%= pet.id %>"></img>
+  <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'shelter-link' %></h2>
+  <p><b>Approximate Age: </b><%= pet.age %><br>
+  <b>Sex: </b><%= pet.sex %><br>
+  <b>Shelter: </b><%= link_to "#{pet.shelter.name}", "shelters/#{pet.shelter_id}", class: 'shelter-link' %></p>
   <%= link_to 'Edit', "/pets/#{pet.id}/edit", class: 'btn btn-info' %>
   <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete, class: 'btn btn-info' %>
-  </section>
+  </section><br>
 <% end %>
