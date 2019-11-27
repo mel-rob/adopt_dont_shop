@@ -1,21 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe "shelter pets index", type: :feature do
-  it "can create pet" do
-      shelter_1 = Shelter.create(name:     "Reptile Room",
-                                 address:  "2364 Desert Lane",
-                                 city:     "Denver",
-                                 state:    "CO",
-                                 zip:      "80211")
+  before(:each) do
+    @shelter_1 = Shelter.create(name:     "Reptile Room",
+                               address:  "2364 Desert Lane",
+                               city:     "Denver",
+                               state:    "CO",
+                               zip:      "80211")
+  end
 
-    visit "/shelters/#{shelter_1.id}/pets"
+  it "has link to create pet" do
+
+    visit "/shelters/#{@shelter_1.id}/pets"
 
     expect(page).to have_link 'New Pet'
+  end
+
+  it "has link that when clicked on takes the user to new pet form" do
+
+    visit "/shelters/#{@shelter_1.id}/pets"
+
     click_link 'New Pet'
 
-    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
 
     expect(page).to have_button 'Submit'
+  end
+
+  it "has form where user can create a new pet and see it in shelter pets index" do
+
+    visit "/shelters/#{@shelter_1.id}/pets/new"
 
     fill_in 'image', :with => 'http://reptile.guide/wp-content/uploads/2019/02/Bearded-dragon-poop-.jpg'
     fill_in 'name', :with => 'Chive'
@@ -25,10 +39,10 @@ RSpec.describe "shelter pets index", type: :feature do
 
     click_button 'Submit'
 
-    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
 
     expect(page).to have_content('Chive')
-    expect(page).to have_content('Age (approx): 5')
+    expect(page).to have_content('Approximate Age: 5')
     expect(page).to have_content('Sex: male')
   end
 end

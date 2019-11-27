@@ -15,14 +15,14 @@ RSpec.describe "shelters index page", type: :feature do
                               zip:     "80232")
   end
 
-  it "has link to delete each individual shelter" do
+  it "has a link to delete each individual shelter" do
 
     visit '/shelters'
 
     expect(page).to have_link('Delete', count: 2)
   end
 
-  it "has link that when clicked deletes shelter" do
+  it "has a delete link that when clicked deletes shelter" do
 
     visit '/shelters'
 

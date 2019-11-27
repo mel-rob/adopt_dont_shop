@@ -7,15 +7,7 @@ class Shelter < ApplicationRecord
                         :state,
                         :zip
 
-  def adoptable_pets
-    pets.where(status: 'adoptable')
-  end
-
   def pet_count
     pets.count
-  end
-
-  def pet_order
-    pets.order(:status)
   end
 end
