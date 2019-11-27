@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "pet index page", type: :feature do
+RSpec.describe "pets index page", type: :feature do
   before(:each) do
-
     @shelter_1 = Shelter.create(name:     "Reptile Room",
                                address:  "2364 Desert Lane",
                                city:     "Denver",
@@ -17,7 +16,7 @@ RSpec.describe "pet index page", type: :feature do
                        status:"adoptable",
                        shelter_id: @shelter_1.id)
 
-   @pet_2 = Pet.create(image: "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
+    @pet_2 = Pet.create(image: "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
                        name:  "Poppy",
                        desc:  "I'm a panther chameleon! I am not very social but am fun to look at.",
                        age:   "2",
@@ -26,14 +25,14 @@ RSpec.describe "pet index page", type: :feature do
                        shelter_id: @shelter_1.id)
   end
 
-  it "can delete pet from pet index" do
+  it "has a link to delete each pet from pets index" do
 
     visit "/pets"
 
     expect(page).to have_link('Delete', count: 2)
   end
 
-  it "has link that when clicked deletes shelter" do
+  it "has a delete link that when clicked deletes pet from shelter" do
 
     visit '/pets'
 
@@ -44,5 +43,5 @@ RSpec.describe "pet index page", type: :feature do
     expect(current_path).to eq('/pets')
     expect(page).to_not have_content(@pet_1.name)
     expect(page).to have_content(@pet_2.name)
-    end
   end
+end
