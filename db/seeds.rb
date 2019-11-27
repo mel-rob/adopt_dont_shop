@@ -18,9 +18,9 @@ Pet.destroy_all
                             state:   "CO",
                             zip:     "80215")
 
-@pet_1 = Pet.create(image:      "https://cdn.shopify.com/s/files/1/0341/4893/products/joorvl5fxa7oxccvhj72.jpg?v=1553159130",
+@pet_1 = Pet.create(image:      "https://www.lllreptile.com/uploads/images/StoreInventoryImage/14570/large",
                     name:       "Alfredo",
-                    desc:       "I'm a white ball python named Alfredo!",
+                    desc:       "I'm a white ball python!",
                     age:        "4",
                     sex:        "female",
                     status:     "adoptable",
