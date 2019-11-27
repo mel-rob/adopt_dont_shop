@@ -1,13 +1,9 @@
 <img src=<%= @pet.image %> class="img-thumbnail" id="img-<%= @pet.id %>"></img>
-<h3>Name: <%= @pet.name %></h3>
-<h3>Description: <%= @pet.desc %></h3>
-<h3>Age (approx): <%= @pet.age %></h3>
-<h3>Sex: <%= @pet.sex %></h3>
-<h3>Status: <%= @pet.status %></h3>
-
-<form action='/pets/<%= @pet.id %>' method='POST'>
-  <a href="/pets/<%= @pet.id %>/edit" class='btn btn-info' role='button'>Update</a>
-  <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-  <input type='hidden' name='_method' value='DELETE'>
-  <input type="submit" class="btn btn-info" value="Delete"/>
-</form>
+<h2><%= @pet.name %></h2>
+<p><b>Description: </b><%= @pet.desc %><br>
+<b>Approximate Age: </b><%= @pet.age %><br>
+<b>Sex: </b><%= @pet.sex %><br>
+<b>Status: </b><%= @pet.status %></p>
+<%= link_to 'Edit', "/pets/#{@pet.id}/edit", class: 'btn btn-info' %>
+<%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete, class: 'btn btn-info' %><br><br>
+<h3><%= link_to "All Pets at #{@pet.shelter.name}", "/shelters/#{@pet.shelter_id}/pets", class: 'shelter-link' %></h3>
