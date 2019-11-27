@@ -1,6 +1,6 @@
 <h1>Create New Shelter</h1>
 
-<%= form_tag("/shelters", method: :post) do %>
+<%= form_tag("/shelters", method: :post) do %><section class='form'>
   <%= label_tag "Name:" %>
   <%= text_field_tag :name %><br>
   <%= label_tag "Address:" %>
@@ -11,5 +11,5 @@
   <%= text_field_tag :state %><br>
   <%= label_tag "Zip:" %>
   <%= text_field_tag :zip %><br>
-  <button type="submit" class="btn btn-info">Submit</button>
+  <button type="submit" class="btn btn-info">Submit</button></section>
 <% end %>
