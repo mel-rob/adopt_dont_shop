@@ -45,10 +45,4 @@ RSpec.describe Pet, type: :model do
   describe "relationships" do
     it { should belong_to :shelter }
   end
-
-  describe "methods" do
-    it "should show pets in order first by adoption" do
-      expect(Pet.all.pet_order).to match_array [@pet_1, @pet_2, @pet_3]
-    end
-  end
 end
