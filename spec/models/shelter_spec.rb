@@ -45,21 +45,11 @@ RSpec.describe Shelter, type: :model do
     it { should have_many :pets }
   end
 
-  it "a user can see shelter's adoptable pets " do
+  describe "methods" do
 
-    expect(@shelter_1.adoptable_pets).to include(@pet_1, @pet_2)
-    expect(@shelter_1.adoptable_pets).not_to include(@pet_3)
+    it "a user sees number of pets at shelter" do
+
+      expect(@shelter_1.pet_count).to eq(3)
+    end
   end
-
-  it "can see number of pets at shelter" do
-
-    expect(@shelter_1.pet_count).to eq(3)
-  end
-
-  it "can see adoptable pets first before pending_adoption pets" do
-
-    expect(@shelter_1.pet_order).to match_array [@pet_1, @pet_2, @pet_3]
-  end
-
-
 end
