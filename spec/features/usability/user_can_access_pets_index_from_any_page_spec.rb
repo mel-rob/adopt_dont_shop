@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "all pages" do
+RSpec.describe "every page on the site" do
   before(:each) do
-
     @shelter_1 = Shelter.create(name:     "Reptile Room",
                                address:  "2364 Desert Lane",
                                city:     "Denver",
@@ -16,9 +15,9 @@ RSpec.describe "all pages" do
                        sex:   "female",
                        status:"adoptable",
                        shelter_id: @shelter_1.id)
-    end
+  end
 
-  it "have a link to navigate to the pets index" do
+  it "has a link to navigate to the pets index" do
 
     visit "/"
     expect(page).to have_link('Pets')
@@ -36,7 +35,7 @@ RSpec.describe "all pages" do
     expect(page).to have_link('Pets')
   end
 
-  it "have a link which when clicked navigates to the pets index" do
+  it "has a link which when clicked navigates to the pets index" do
 
     visit "/"
     click_link 'Pets'
