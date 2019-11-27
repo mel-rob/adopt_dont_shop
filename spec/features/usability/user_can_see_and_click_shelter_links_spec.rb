@@ -23,7 +23,7 @@ RSpec.describe "shelters index page", type: :feature do
                        shelter_id: @shelter_1.id)
   end
 
-  it "can click on shelter name in shelters index and link to shelter show page" do
+  it "has a link on each shelter name in shelters index that links to shelters show page" do
 
     visit '/shelters'
 
@@ -35,7 +35,7 @@ RSpec.describe "shelters index page", type: :feature do
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
   end
 
-  it "can click on shelter name in pets index and link to shelter show page" do
+  it "has a link on each shelter name in pets index that links to shelters show page" do
 
     visit '/pets'
 
